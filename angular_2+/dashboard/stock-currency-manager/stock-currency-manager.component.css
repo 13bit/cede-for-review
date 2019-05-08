@@ -1,0 +1,26 @@
+.stock-currency {
+  margin-top: 0.4rem;
+}
+
+.stock-currency-container__header {
+  text-transform: uppercase;
+  font-size: .875rem;
+  display: block;
+}
+
+.stock-currency-container {
+}
+
+.stock-currency-container__select {
+  width: 100%;
+  height: 1.8rem;
+  text-transform: capitalize;
+}
+
+.stock-currency-stock {
+  padding-right: .5rem;
+}
+
+.stock-currency-currency {
+  padding-left: .5rem;
+}

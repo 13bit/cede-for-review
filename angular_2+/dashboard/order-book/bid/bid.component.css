@@ -1,0 +1,19 @@
+@import "../../../../styles/order-book.css";
+
+.bids-container {
+  width: 48%;
+  float: left;
+  margin-right: 0.5em;
+}
+
+.order-book__item td:nth-child(1) {
+  text-align: right;
+}
+
+.order-book__item td:nth-child(2) {
+  text-align: right;
+}
+
+.order-book__item td:nth-child(3) {
+  text-align: right;
+}

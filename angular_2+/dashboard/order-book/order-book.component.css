@@ -1,0 +1,39 @@
+.order-book {
+  height: 100%;
+}
+
+.depth-chart-header__text {
+  text-transform: uppercase;
+  padding-left: .3rem;
+  text-align: center;
+}
+
+.depth-chart-header__left-volume {
+  padding-right: 0;
+  color: #4b823d;
+  font-weight: bold;
+}
+
+.depth-chart-header__last-price {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.depth-chart-header__right-volume {
+  text-align: right;
+  color: #bc412e;
+  font-weight: bold;
+}
+
+.ps-container {
+  max-height: 45rem;
+  max-width: 27rem;
+}
+
+@media screen and (width: 1920px){
+  .ps-container {
+    max-width: inherit;
+  }
+}

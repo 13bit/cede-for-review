@@ -1,0 +1,21 @@
+<div class="bids-container">
+  <table class="table table-sm table-borderless">
+    <thead class="order-book-table__head">
+    <tr>
+      <th>Value</th>
+      <th>Amount</th>
+      <th>Bid</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let item of bid">
+      <tr class="order-book__item"
+          *ngIf="item.amount > 0">
+        <td>{{item.total | orderBookValue}}</td>
+        <td>{{item.amount | orderBookAmount}}</td>
+        <td class="order-book__bid-item">{{item.price | exponentToFixed | orderBookPrice}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

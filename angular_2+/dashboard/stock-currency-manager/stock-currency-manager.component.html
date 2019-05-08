@@ -1,0 +1,28 @@
+<div class="row stock-currency">
+  <div class="col-md-6 stock-currency-stock">
+    <div class="stock-currency-container">
+      <div class="stock-currency-container__header">Stock</div>
+      <div class="">
+        <select class="stock-currency-container__select btn btn-sm btn-outline-secondary"
+                (change)="onStockChange($event)"
+                [(ngModel)]="selectedStock">
+          <option *ngFor="let stock of stocks" [value]="stock">{{stock| prepareStockName}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 stock-currency-currency">
+    <div class="stock-currency-container">
+      <div class="stock-currency-container__header">Currency</div>
+      <div class="">
+        <select class="stock-currency-container__select btn btn-sm btn-outline-secondary"
+                [(ngModel)]="selectedCurrencyPair"
+                (change)="onCurrencyChange()">
+          <option *ngFor="let currencyPair of currencyPairs" [ngValue]="currencyPair">
+            {{currencyPair.baseCurrency + '/' + currencyPair.quoteCurrency}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

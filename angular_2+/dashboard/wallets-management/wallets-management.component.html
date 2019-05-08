@@ -1,0 +1,19 @@
+<div class="user-wallets-container" *ngIf="stocks && wallets && wallets.length">
+  <div class="wallet-group">
+    <div class="wallet">
+      <button class="btn btn-sm btn-outline-secondary wallet__button"
+              (click)="toggleAllWallets()">Select all wallets
+      </button>
+    </div>
+  </div>
+
+  <div class="wallet-group" *ngFor="let stock of stocks">
+    <div class="wallet wallet__header">{{stock}}</div>
+    <div *ngFor="let wallet of wallets" class="wallet">
+      <app-wallet-balance [wallet]="wallet"
+                  [stock]="stock"
+                  (walletAction)="toggleWallet($event)">
+      </app-wallet-balance>
+    </div>
+  </div>
+</div>

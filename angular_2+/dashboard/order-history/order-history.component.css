@@ -1,0 +1,58 @@
+.orders-header-row td:first-child {
+  padding: .35rem;
+}
+
+.orders-header__total {
+  text-align: right;
+}
+
+.orders-header__fulfilled {
+  text-align: right;
+}
+
+.orders-wrapper {
+  position: relative;
+  max-height: 20vh;
+}
+
+.orders-date-row td:first-child {
+  padding: .71rem .35rem;
+}
+
+.orders-row {
+  cursor: pointer;
+}
+
+.orders-row:hover {
+  background-color: #3E2925;
+}
+
+.orders-row td:first-child {
+  padding: .35rem;
+}
+
+.orders-row__total {
+  padding: .2859rem 0;
+}
+
+.orders-row__quantity--buy {
+  color: #5EAD48;
+}
+
+.orders-row__quantity--sell {
+  color: #EB4B31;
+}
+
+.orders-row-fulfilled-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.orders-row-fulfilled-wrapper__percent {
+  padding-right: .7rem;
+}
+
+.orders__empty-message {
+  height: 100%;
+  font-family: "Helvetica Neue", sans-serif;
+}

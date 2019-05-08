@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container-fluid dashboard">
+  <div class="row dashboard-header">
+    <div class="col-md-2">
+      <app-stock-currency-manager></app-stock-currency-manager>
+    </div>
+    <div class="col-md-10">
+      <app-dashboard-wallets-management></app-dashboard-wallets-management>
+    </div>
+  </div>
+
+  <div class="row dashboard-container">
+    <div class="col-md-2 dashboard-left-col">
+      <app-last-trades></app-last-trades>
+    </div>
+    <div class="col-md-7 dashboard-main-col">
+      <div class="row dashboard-main">
+        <div class="col-md-12 dashboard-main__chart">
+          <app-trading-view></app-trading-view>
+        </div>
+      </div>
+      <div class="row dashboard-trade">
+        <div class="col-md-3 dashboard-trade__sell">
+          <app-order-view [currentOrderSide]="orderSide.sell"></app-order-view>
+        </div>
+        <div class="col-md-6 dashboard-trade__orders">
+          <app-orders-history></app-orders-history>
+        </div>
+        <div class="col-md-3 dashboard-trade__buy">
+          <app-order-view [currentOrderSide]="orderSide.buy">
+          </app-order-view>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 dashboard-right-col">
+      <app-order-book></app-order-book>
+    </div>
+  </div>
+</div>

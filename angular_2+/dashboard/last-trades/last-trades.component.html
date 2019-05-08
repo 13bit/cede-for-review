@@ -1,0 +1,22 @@
+<div class="last-trade-container">
+  <div *ngIf="lastTradesFailed === false">
+    <div class="text-header">Last Trades</div>
+
+    <div class="ps ps-container" [perfectScrollbar]="config">
+      <table class="last-trade-table table table-sm table-borderless">
+        <tbody>
+        <tr *ngFor="let lastTrade of lastTrades" class="last-trade last-trade__item"
+            [ngClass]="{'last-trade__item-sell': lastTrade.type === 'sell', 'last-trade__item-buy': lastTrade.type === 'buy'}">
+          <td>{{lastTrade.quantity | exponentToFixed | tenDigits}}</td>
+          <td>{{lastTrade.time | date:'HH:mm:ss'}}</td>
+          <td class="last-trade"
+              [ngClass]="{'last-trade__item-sell': lastTrade.type === 'sell', 'last-trade__item-buy': lastTrade.type === 'buy'}">
+            {{lastTrade.price | exponentToFixed | tenDigits}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-error-view *ngIf="lastTradesFailed"></app-error-view>
+</div>

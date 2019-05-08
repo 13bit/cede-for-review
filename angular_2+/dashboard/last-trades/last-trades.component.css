@@ -1,0 +1,38 @@
+@import "../../../styles/dashboard.css";
+
+.last-trade-container {
+  height: 100%;
+}
+
+.last-trade-table {
+  width: 95%;
+  max-width: 95%;
+}
+
+.last-trade__item {
+  text-align: right;
+}
+
+.last-trade__item:hover {
+  background: rgba(0,0,0,.8);
+}
+
+.last-trade__item td:nth-child(1) {
+  text-align: left;
+}
+
+.last-trade__item td:nth-child(2) {
+  text-align: center;
+}
+
+.last-trade__item-sell {
+  color: #bc412e;
+}
+
+.last-trade__item-buy {
+  color: #4b823d;
+}
+
+.ps-container {
+  max-height: 64.25rem;
+}

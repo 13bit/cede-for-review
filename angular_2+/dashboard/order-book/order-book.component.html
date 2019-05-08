@@ -1,0 +1,31 @@
+<div class="order-book">
+  <div *ngIf="lastTradesFailed === false;">
+    <div class="depth-chart">
+      <div class="row">
+        <div class="offset-md-4 col-md-4 depth-chart-header__text">Last price</div>
+      </div>
+      <div class="row" *ngIf="bidTotalVolume.total && askTotalVolume.total && lastPrice">
+        <div class="col-md-4 depth-chart-header__left-volume">
+          {{bidTotalVolume.total| number }} {{bidTotalVolume.currency}}
+        </div>
+        <div class="col-md-4 depth-chart-header__last-price">
+          {{lastPrice | exponentToFixed | orderBookLastPrice}}
+        </div>
+        <div class="col-md-4 depth-chart-header__right-volume">
+          {{askTotalVolume.total | number }} {{askTotalVolume.currency}}
+        </div>
+      </div>
+      <app-depth-chart></app-depth-chart>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="padding-right: 0px">
+        <div class="ps ps-container" [perfectScrollbar]="config">
+          <app-order-book-bid></app-order-book-bid>
+          <app-order-book-ask></app-order-book-ask>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-error-view *ngIf="lastTradesFailed"></app-error-view>
+</div>

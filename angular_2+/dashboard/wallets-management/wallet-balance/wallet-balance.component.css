@@ -1,0 +1,73 @@
+/* tooltip styling START  */
+::ng-deep .tooltip {
+  width: 14em;
+}
+
+::ng-deep .tooltip.show {
+  opacity: 1;
+}
+
+::ng-deep .tooltip > .arrow:before {
+  border-bottom-color: #353535;
+}
+
+::ng-deep .tooltip-inner {
+  background-color: #353535;
+  color: #969696;
+  min-height: 3.5em;
+}
+/* tooltip styling END */
+
+.wallet__button {
+  margin-right: 0.5em;
+}
+
+.wallet__button:hover {
+  color: #4e8bb7;
+  background-color: #003e6a;
+}
+
+.wallet__button_selected {
+  color: #4e8bb7;
+  background-color: #003e6a;
+}
+
+.wallet-balance {
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: left;
+}
+
+.wallet-balance__name {
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.wallet-balance__currencies {
+
+}
+
+.balance-currency-container__name {
+}
+
+.balance-currency-container__free {
+  text-align: right;
+  color: #e2e6ea;
+}
+
+.balance-currency-container__total {
+  text-align: right;
+  color: #7f7f7f;
+}
+
+.icon {
+  font-size: 14px;
+  color: #C42A11;
+  padding-right: 5px;
+}
+
+.wallet-balance__error {
+  padding: 10px;
+}
+

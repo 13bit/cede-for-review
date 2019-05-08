@@ -1,0 +1,60 @@
+<div class="orders__empty-message d-flex justify-content-center align-items-center" *ngIf="!orders.length">
+  <span >You don't have open orders yet</span>
+</div>
+
+<div class="orders" *ngIf="orders.length">
+  <table>
+    <tbody>
+    <tr class="orders-header-row">
+      <td style="width: 70px;">TIME</td>
+      <td style="width: 100px;">RATE</td>
+      <td style="width: 110px;">UNITS/PERCENTS</td>
+      <td style="width: 120px;" class="orders-header__total">TOTAL</td>
+      <td style="width: 110px; " class="orders-header__fulfilled">FULFILLED</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="orders-wrapper ps ps-container" [perfectScrollbar]="config">
+    <table>
+      <tbody>
+      <ng-template ngFor let-order [ngForOf]="orders" let-idx="index" [ngForTrackBy]="idx">
+        <tr *ngIf="!orders[idx - 1]
+        || ((orders[idx - 1].orderTime | date: 'longDate') != (order.orderTime | date: 'longDate'))"
+            class="orders-date-row">
+          <td colspan="5">
+            {{order.orderTime | date: 'longDate'}}
+          </td>
+        </tr>
+        <tr class="orders-row" (click)="selectOrder(order)">
+          <td style="width: 70px;">
+            {{order.orderTime | amDateFormat:'h:mm'}}
+          </td>
+          <td style="width: 100px;">
+            {{order.rate | number :'1.1-10'| noComma}}
+          </td>
+          <td style="width: 110px;">
+          <span [ngClass]="{'orders-row__quantity--buy': order.side === 'BUY',
+          'orders-row__quantity--sell': order.side === 'SELL'}">
+            {{order.quantity | number :'1.1-10'| noComma}} <span *ngIf="order.isPercentage">%</span>
+          </span>
+          </td>
+          <td style="width: 120px;" class="d-flex justify-content-end orders-row__total">
+            {{order.total | number :'1.1-10'| noComma}} {{getTotalCurrency(order)}}
+          </td>
+          <td style="width: 115px;">
+            <div class="orders-row-fulfilled-wrapper">
+              <div class="orders-row-fulfilled-wrapper__percent">
+                {{((order.platformOrders | closedOrders)?.length
+                / order.platformOrders?.length * 100) | number : '1.0-2'}}%
+              </div>
+              <div>
+                {{(order.platformOrders | closedOrders)?.length}} / {{order.platformOrders?.length}}
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>

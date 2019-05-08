@@ -1,0 +1,21 @@
+<div class="asks-container">
+  <table class="table table-sm table-borderless">
+    <thead class="order-book-table__head ask-table__head">
+    <tr>
+      <th>Ask</th>
+      <th>Amount</th>
+      <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let item of ask">
+      <tr class="order-book__item"
+          *ngIf="item.amount > 0">
+        <td class="order-book__ask-item">{{item.price | exponentToFixed | orderBookPrice }}</td>
+        <td>{{item.amount | orderBookAmount }}</td>
+        <td>{{item.total | orderBookValue}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

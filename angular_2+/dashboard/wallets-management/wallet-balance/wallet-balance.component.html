@@ -1,0 +1,37 @@
+<div>
+  <button class="btn btn-sm btn-outline-secondary wallet__button"
+          *ngIf="wallet.exchangePlatform.toLowerCase() === stock"
+          (click)="toggleWallet()"
+          [ngClass]="{'wallet__button_selected': wallet.isSelected}"
+          (mouseenter)="onMouseEnter(wallet)"
+          (mouseleave)="onMouseLeave($event)"
+          placement="bottom" [ngbTooltip]="walletBalance">
+    {{wallet.name}}
+  </button>
+</div>
+
+<ng-template #walletBalance>
+  <div class="wallet-balance" *ngIf="balanceRequestIsSuccessful">
+    <div class="wallet-balance__name">
+      {{wallet.name}}
+    </div>
+    <div class="row balance-currency-container"
+         *ngFor="let currency of keys">
+      <div class="col-md-5 balance-currency-container__name">
+        {{currency}}
+      </div>
+      <div class="col-md-7 balance-currency-container__total">
+        {{ balances[currency].total | number:'1.0-5'| noComma}}
+        <div class="row">
+          <div class="col-md-12 balance-currency-container__free">
+            {{ balances[currency].free | number:'1.0-5'| noComma}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wallet-balance__error" *ngIf="balanceRequestIsSuccessful === false">
+    <span class="icon"><i class="fa fa-times-circle"></i></span>
+    <span>Can't load data</span>
+  </div>
+</ng-template>

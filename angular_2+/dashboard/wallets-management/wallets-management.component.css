@@ -1,0 +1,26 @@
+.user-wallets-container {
+}
+
+.wallet-group {
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-top: 0.3em;
+  min-width: 6em;
+}
+
+.wallet {
+  display: inherit;
+}
+
+.wallet__header {
+  text-transform: uppercase;
+  font-size: .875rem;
+  display: block;
+}
+
+.wallet__button {
+  margin-right: 0.5em;
+}
+
+
+

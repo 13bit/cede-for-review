@@ -1,0 +1,93 @@
+@import "./../../styles/dashboard.css";
+
+.dashboard {
+  height: 96vh;
+  background-color: #222222;
+  color: #7d7d7d;
+}
+
+.dashboard-header {
+  border-bottom: 1px solid #353535;
+  padding-bottom: 1rem;
+}
+
+.dashboard-left-col {
+  overflow: hidden;
+  padding-right: .3rem;
+}
+
+.dashboard-right-col {
+  overflow: hidden;
+  padding-right: .3rem;
+}
+
+.dashboard-main-col {
+}
+
+@media screen and (width: 1366px) {
+  .dashboard-left-col, .dashboard-right-col, .dashboard-main-col {
+    font-size: .75rem;
+    height: 87vh;
+  }
+}
+
+@media screen and (width: 1440px){
+  .dashboard-left-col, .dashboard-right-col, .dashboard-main-col {
+    font-size: .8rem;
+    height: 88vh;
+  }
+}
+
+@media screen and (width: 1600px) {
+  .dashboard-left-col, .dashboard-right-col, .dashboard-main-col {
+    font-size: .85rem;
+    height: 88.3vh;
+  }
+}
+
+@media screen and (width: 1920px) {
+  .dashboard-left-col, .dashboard-right-col, .dashboard-main-col {
+    height: 89vh;
+  }
+}
+
+.last-trade__item {
+  text-align: right;
+}
+
+.last-trade__item td:nth-child(1) {
+  text-align: left;
+}
+
+.last-trade__item-sell {
+  color: #bc412e;
+}
+
+.last-trade__item-buy {
+  color: #4b823d;
+}
+
+.dashboard-main {
+  border: 1px solid #353535;
+}
+
+.dashboard-main__chart {
+  height: 57vh;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dashboard-trade {
+  margin-top: 1rem;
+}
+
+.dashboard-trade__sell {
+  border: 1px solid #353535;
+}
+
+.dashboard-trade__orders {
+}
+
+.dashboard-trade__buy {
+  border: 1px solid #353535;
+}

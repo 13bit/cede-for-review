@@ -1,0 +1,61 @@
+.chart-container {
+  width: 95%;
+  height: 100%;
+  fill: #222222;
+}
+
+.chart-scale {
+  stroke: #7d7d7d;
+  fill: #434343;
+}
+
+.chart-line {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 1.5;
+}
+
+.chart-bid-area {
+  fill: rgba(42, 66, 34, 0.8);
+}
+
+.chart-bid-line {
+  stroke: #88cc4b;
+}
+
+.chart-ask-area {
+  fill: rgba(142, 57, 46, 0.8);
+}
+
+.chart-ask-line {
+  stroke: #e04a30;
+}
+
+.chart-tooltip__focus {
+  display: none;
+}
+
+.chart-tooltip__circle {
+  fill: #7d7d7d;
+  stroke: #fff;
+}
+
+.chart-tooltip__popup_hover {
+  width: 150px;
+  height: 45px;
+  opacity: 0.5;
+}
+
+.chart-tooltip-popup__price-text {
+  fill: #7d7d7d;
+}
+
+.chart-tooltip-popup__volume-text {
+  fill: #7d7d7d;
+}
+
+.chart-mouse-event-overlay {
+  pointer-events: all;
+  opacity: 0;
+}
